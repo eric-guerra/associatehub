@@ -1,0 +1,11 @@
+{
+  "index": "/index.html",
+  "assetGroups": [
+    { "name": "app", "installMode": "prefetch", "resources": { "files": ["/favicon.ico", "/index.html", "/*.css", "/*.js"] } },
+    { "name": "assets", "installMode": "lazy", "updateMode": "prefetch", "resources": { "files": ["/assets/**"] } }
+  ],
+  "dataGroups": [
+    { "name": "tasks", "urls": ["/api/stores/*/tasks"], "cacheConfig": { "strategy": "freshness", "maxSize": 20, "maxAge": "12h", "timeout": "4s" } },
+    { "name": "planograms", "urls": ["/api/planograms/**"], "cacheConfig": { "strategy": "performance", "maxSize": 200, "maxAge": "7d" } }
+  ]
+}
